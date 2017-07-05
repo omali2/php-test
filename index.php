@@ -12,3 +12,6 @@ header('Content-Type: image/png');
 imagePNG($im);
 imagedestroy($im);
 ?>
+<?php
+echo "Hallo Saeid vom ".gethostname()
+?>
