@@ -21,6 +21,7 @@ $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("MYSQL_USER");
 $dbpwd = getenv("MYSQL_PASSWORD");
 $dbname = getenv("MYSQL_DATABASE");
+echo "<br><br><br><br>dbuser=$dbuser pass=$dbpwd dbname=$dbname";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
@@ -28,10 +29,11 @@ if ($connection->connect_errno) {
     exit();
 }
 echo "<br><br><br><br>My awesome PHP test";
-$query = "SELECT * from users";
+$query = "show databases";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['user_id'] . " " . $row['username'] . "\n";
+    //echo $row['user_id'] . " " . $row['username'] . "\n";
+    echo $row "\n";
 }
 $rs->close();
 $connection->close();
