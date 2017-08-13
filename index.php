@@ -27,13 +27,13 @@ if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "<br>-----------------------------------------------------------------";
+echo "<br>-----------------------------------------------------------------<br>";
+echo "productID" . "\t" . "productCode" . "\t" . "quantity" . "\t" . "price" . "\n <br>";
 $query = "select * from products";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
     //echo $row['user_id'] . " " . $row['username'] . "\n";
-    echo "productID" . " " . "productCode" . " " . "quantity" . " " . "price" . "\n <br>";
-    echo $row['productID'] . " " . $row['productCode'] . " " . $row['quantity'] . " " . $row['price'] . "\n <br>";
+    echo $row['productID'] . "\t" . $row['productCode'] . "\t" . $row['quantity'] . "\t" . $row['price'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
