@@ -33,7 +33,7 @@ $query = "show databases";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
     //echo $row['user_id'] . " " . $row['username'] . "\n";
-    echo $row "\n";
+    echo $row[0] . " " . $row[1] . "\n";
 }
 $rs->close();
 $connection->close();
