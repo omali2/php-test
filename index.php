@@ -29,11 +29,12 @@ if ($connection->connect_errno) {
     exit();
 }
 echo "<br><br><br><br>My awesome PHP test";
-$query = "show databases";
+$query = "select * from products";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
     //echo $row['user_id'] . " " . $row['username'] . "\n";
-    echo $row[0] . " " . $row[1] . "\n";
+    echo "productID" . " " . "productCode" . " " . "quantity" . " " . "price" . "\n";
+    echo $row['productID'] . " " . $row['productCode'] . " " . $row['quantity'] . " " . $row['price'] . "\n";
 }
 $rs->close();
 $connection->close();
