@@ -16,11 +16,17 @@
 echo "Hallo Saeid vom Server = ".gethostname()
 ?>
 <?php
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("MYSQL_USER");
-$dbpwd = getenv("MYSQL_PASSWORD");
-$dbname = getenv("MYSQL_DATABASE");
+//$dbhost = getenv("MYSQL_SERVICE_HOST");
+//$dbport = getenv("MYSQL_SERVICE_PORT");
+//$dbuser = getenv("MYSQL_USER");
+//$dbpwd = getenv("MYSQL_PASSWORD");
+//$dbname = getenv("MYSQL_DATABASE");
+
+$dbhost = "172.30.114.147";                                                                                                                                                                         
+$dbport = "3306";                                                                                                                                                                                   
+$dbuser = "saeid";                                                                                                                                                                                  
+$dbpwd = "omali";                                                                                                                                                                                   
+$dbname = "saeid";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
