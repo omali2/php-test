@@ -22,11 +22,11 @@ echo "Hallo Saeid vom Server = ".gethostname()
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-$dbhost = "172.30.114.147";                                                                                                                                                                         
+$dbhost = "172.30.89.192                                                                                                                                                                         
 $dbport = "3306";                                                                                                                                                                                   
 $dbuser = "saeid";                                                                                                                                                                                  
 $dbpwd = "omali";                                                                                                                                                                                   
-$dbname = "saeid";
+$dbname = "saeid-db";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
@@ -35,11 +35,13 @@ if ($connection->connect_errno) {
 }
 echo "<br>-----------------------------------------------------------------<br>";
 echo "productID" . "\t" . "productCode" . "\t" . "quantity" . "\t" . "price" . "\n <br>";
-$query = "select * from products";
+$query = "select * from customer";
 $rs = $connection->query($query);
+echo 'Name' . "\t" . 'Alte' . "\n";
+echo "-----------------------------------------\n";
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    //echo $row['user_id'] . " " . $row['username'] . "\n";
-    echo $row['productID'] . "\t" . $row['productCode'] . "\t" . $row['quantity'] . "\t" . $row['price'] . "\n <br>";
+    echo $row['name'] . "\t" . $row['age'] . "\n";
+    //echo $row['productID'] . "\t" . $row['productCode'] . "\t" . $row['quantity'] . "\t" . $row['price'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
