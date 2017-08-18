@@ -33,15 +33,12 @@ if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
+echo "Name" . "\t" . "Alte" . "\n <br>";
 echo "<br>-----------------------------------------------------------------<br>";
-echo "productID" . "\t" . "productCode" . "\t" . "quantity" . "\t" . "price" . "\n <br>";
 $query = "select * from customer";
 $rs = $connection->query($query);
-echo 'Name' . "\t" . 'Alte' . "\n";
-echo "-----------------------------------------\n";
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . "\t" . $row['age'] . "\n";
-    //echo $row['productID'] . "\t" . $row['productCode'] . "\t" . $row['quantity'] . "\t" . $row['price'] . "\n <br>";
+    echo $row['name'] . "\t" . $row['age'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
