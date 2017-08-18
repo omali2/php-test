@@ -24,7 +24,7 @@ echo "Hallo Saeid vom Server = ".gethostname()
 
 $dbhost = "172.30.89.192";                                                                                                                                                                        
 $dbport = "3306";                                                                                                                                                                                   
-$dbuser = "saeid";                                                                                                                                                                                  
+$dbuser = "root";                                                                                                                                                                                  
 $dbpwd = "omali";                                                                                                                                                                                   
 $dbname = "saeid";
 
@@ -33,12 +33,12 @@ if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "Name" . "\t" . "Alte" . "\n <br>";
-echo "<br>-----------------------------------------------------------------<br>";
+echo "<br>Name" . "\t" . "Alte" . "\n <br>";
+echo "-----------------------------------------------------------------<br>";
 $query = "select * from customer";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . "\t" . $row['age'] . "\n <br>";
+    echo $row['name'] . "\t\t     " . $row['age'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
