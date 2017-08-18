@@ -26,7 +26,7 @@ $dbhost = "172.30.89.192";
 $dbport = "3306";                                                                                                                                                                                   
 $dbuser = "saeid";                                                                                                                                                                                  
 $dbpwd = "omali";                                                                                                                                                                                   
-$dbname = "saeid-db";
+$dbname = "saeid";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
