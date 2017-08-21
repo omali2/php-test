@@ -22,10 +22,10 @@ echo "Hallo Saeid vom Server = ".gethostname()
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-$dbhost = "172.30.89.192";                                                                                                                                                                        
+$dbhost = "mysql";                                                                                                                                                                        
 $dbport = "3306";                                                                                                                                                                                   
 $dbuser = "root";                                                                                                                                                                                  
-$dbpwd = "omali";                                                                                                                                                                                   
+$dbpwd = "";                                                                                                                                                                                   
 $dbname = "saeid";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
