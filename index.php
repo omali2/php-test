@@ -22,7 +22,7 @@ echo "Hallo Saeid vom Server = ".gethostname()
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-$dbhost = "	172.30.89.192";                                                                                                                                                                        
+$dbhost = "172.30.89.192";                                                                                                                                                                        
 $dbport = "3306";                                                                                                                                                                                   
 $dbuser = "root";                                                                                                                                                                                  
 $dbpwd = "omali";                                                                                                                                                                                   
