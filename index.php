@@ -1,4 +1,5 @@
 <?php
+
 // Create a 55x30 image
 //$im = imagecreatetruecolor(200, 200);
 //$white = imagecolorallocate($im, 255, 255, 255);
@@ -11,22 +12,28 @@
 //header('Content-Type: image/png');
 //imagePNG($im);
 //imagedestroy($im);
+
 //?>
+
 <?php
+
 echo "Hallo Saeid vom Server = ".gethostname()
+
 ?>
+
 <?php
+$dbhost = "172.30.89.192";
+$dbport = "3306";
+$dbuser = "root";
+$dbpwd = "omali";
+$dbname = "saeid";
+
 //$dbhost = getenv("MYSQL_SERVICE_HOST");
 //$dbport = getenv("MYSQL_SERVICE_PORT");
 //$dbuser = getenv("MYSQL_USER");
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-$dbhost = "172.30.89.192";                                                                                                                                                                        
-$dbport = "3306";                                                                                                                                                                                   
-$dbuser = "root";                                                                                                                                                                                  
-$dbpwd = "omali";                                                                                                                                                                                   
-$dbname = "saeid";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
@@ -35,32 +42,15 @@ if ($connection->connect_errno) {
 }
 echo "<br>Name" . "\t" . "Alte" . "\n <br>";
 echo "-----------------------------------------------------------------<br>";
-$query = "select * from customer";
-$rs = $connection->query($query);
-while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . "\t" . $row['age'] . "\n <br>";
-}
-$rs->close();
-$connection->close();
-?>
-<?php
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("MYSQL_USER");
-$dbpwd = getenv("MYSQL_PASSWORD");
-$dbname = getenv("MYSQL_DATABASE");
 
-$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-if ($connection->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
-echo "<br><br><br><br>My awesome PHP test";
-$query = "SELECT * from users";
+$query = "SELECT * from costumer";
 $rs = $connection->query($query);
+
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['user_id'] . " " . $row['username'] . "\n";
+    echo $row['name'] . " " . $row['age'] . "\n";
 }
+
 $rs->close();
 $connection->close();
+
 ?>
