@@ -13,20 +13,7 @@
 //imagePNG($im);
 //imagedestroy($im);
 
-?>
-
-<?php
-
 echo "Hallo Saeid vom Server = ".gethostname()
-
-?>
-
-<?php
-$dbhost = "172.30.89.192";
-$dbport = "3306";
-$dbuser = "root";
-$dbpwd = "omali";
-$dbname = "saeid";
 
 //$dbhost = getenv("MYSQL_SERVICE_HOST");
 //$dbport = getenv("MYSQL_SERVICE_PORT");
@@ -34,17 +21,24 @@ $dbname = "saeid";
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
+$dbhost = "172.30.89.192";
+$dbport = "3306";
+$dbuser = "root";
+$dbpwd = "omali";
+$dbname = "saeid";
+$dbtable= "customer"
+
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "<B>Name     Alte</B><BR>";
-echo "----------------------------------------------<BR>";
-$query = "SELECT * from costumer";
+echo "<B> Name  Alte <br>";
+echo "------------------------------------<BR>";
+$query = "SELECT * from customer";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . " " . $row['age'] . "\n <BR>";
+    echo $row['name'] . " " . $row['age'] . "\n";
 }
 $rs->close();
 $connection->close();
