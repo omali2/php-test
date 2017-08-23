@@ -22,10 +22,10 @@ echo "Hallo Saeid vom Server = ".gethostname()
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-$dbhost = "mysql";                                                                                                                                                                        
+$dbhost = "	172.30.89.192";                                                                                                                                                                        
 $dbport = "3306";                                                                                                                                                                                   
 $dbuser = "root";                                                                                                                                                                                  
-$dbpwd = "";                                                                                                                                                                                   
+$dbpwd = "omali";                                                                                                                                                                                   
 $dbname = "saeid";
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
@@ -38,7 +38,7 @@ echo "-----------------------------------------------------------------<br>";
 $query = "select * from customer";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . "\t\t     " . $row['age'] . "\n <br>";
+    echo $row['name'] . "\t" . $row['age'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
