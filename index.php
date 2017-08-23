@@ -39,11 +39,12 @@ if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "<br>My awesome PHP test<BR>";
+echo "<B>Name     Alte</B><BR>";
+echo "----------------------------------------------<BR>";
 $query = "SELECT * from costumer";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . " " . $row['age'] . "\n";
+    echo $row['name'] . " " . $row['age'] . "\n <BR>";
 }
 $rs->close();
 $connection->close();
