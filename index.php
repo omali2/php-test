@@ -1,6 +1,6 @@
 <?php
 
-echo "Hallo Saeid vom Server = " . gethostname() . "<br>";
+echo "Hallo Saeid vom Server = " . gethostname() . "<br><br>";
 $dbhost = "172.30.89.192";
 $dbport = "3306";
 $dbuser = "root";
