@@ -13,7 +13,7 @@
 //imagePNG($im);
 //imagedestroy($im);
 
-//?>
+?>
 
 <?php
 
@@ -34,22 +34,17 @@ $dbname = "saeid";
 //$dbpwd = getenv("MYSQL_PASSWORD");
 //$dbname = getenv("MYSQL_DATABASE");
 
-
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "<br>Name" . "\t" . "Alte" . "\n <br>";
-echo "-----------------------------------------------------------------<br>";
-
+echo "<br>My awesome PHP test<BR>";
 $query = "SELECT * from costumer";
 $rs = $connection->query($query);
-
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
     echo $row['name'] . " " . $row['age'] . "\n";
 }
-
 $rs->close();
 $connection->close();
 
