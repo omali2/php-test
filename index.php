@@ -18,7 +18,7 @@ echo "------------------------------------<BR>";
 $query = "SELECT * from customer";
 $rs = $connection->query($query);
 while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
-    echo $row['name'] . " " . $row['age'] . "\n <br>:w";
+    echo $row['name'] . " " . $row['age'] . "\n <br>";
 }
 $rs->close();
 $connection->close();
